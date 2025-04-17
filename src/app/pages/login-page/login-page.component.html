@@ -1,0 +1,26 @@
+<div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow">
+    <h2 class="text-xl font-semibold mb-4">Se connecter</h2>
+
+    <form (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+            <label class="block text-sm">Nom d'utilisateur</label>
+            <input [(ngModel)]="username" name="username" required class="border p-2 w-full rounded" />
+        </div>
+
+        <div>
+            <label class="block text-sm">Mot de passe</label>
+            <input [(ngModel)]="password" name="password" type="password" required class="border p-2 w-full rounded" />
+        </div>
+
+        <div *ngIf="error" class="text-red-500 text-sm">{{ error }}</div>
+
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Se connecter
+        </button>
+    </form>
+
+    <p class="text-sm mt-4">
+        Pas encore de compte ?
+        <a routerLink="/auth/register" class="text-blue-600 hover:underline">S'inscrire</a>
+    </p>
+</div>

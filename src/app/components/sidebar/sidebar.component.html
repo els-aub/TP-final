@@ -1,0 +1,16 @@
+<aside class="w-64 bg-gray-100 p-4 min-h-screen hidden sm:block">
+    <div *ngIf="username" class="mb-6 font-semibold">
+        Bienvenue, {{ username }}
+    </div>
+    <div>
+        <h2 class="font-bold mb-2">Playlist</h2>
+        <ul>
+            <li *ngFor="let video of playlist" class="text-sm mb-1">
+                {{ video.title }}
+            </li>
+        </ul>
+        <p *ngIf="playlist.length === 0" class="text-sm text-gray-500">
+            Aucune vidéo dans votre playlist
+        </p>
+    </div>
+</aside>

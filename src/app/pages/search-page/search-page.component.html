@@ -1,0 +1,21 @@
+<div class="max-w-2xl mx-auto mt-10">
+    <form (ngSubmit)="search()" class="flex gap-2 mb-4">
+        <input [(ngModel)]="query" name="query" placeholder="Rechercher une vidéo..."
+            class="flex-1 border rounded p-2" />
+        <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+            Rechercher
+        </button>
+    </form>
+
+    <div *ngIf="isLoading" class="text-center text-gray-500">Recherche en cours...</div>
+
+    <div *ngIf="results.length > 0" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div *ngFor="let video of results" class="border rounded p-4">
+            <img [src]="video.thumbnail" alt="" class="mb-2 w-full" />
+            <h3 class="font-semibold text-lg">{{ video.title }}</h3>
+            <button (click)="addToPlaylist(video)" class="mt-2 text-sm text-blue-600 hover:underline">
+                Ajouter à la playlist
+            </button>
+        </div>
+    </div>
+</div>
