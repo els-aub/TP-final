@@ -17,6 +17,8 @@ export class SearchPageComponent {
   search() {
     this.isLoading = true;
 
+
+    // en attendant 
     setTimeout(() => {
       this.results = [
         { id: 'abc1', title: 'Vidéo 1', thumbnail: 'https://via.placeholder.com/150' },
@@ -27,6 +29,7 @@ export class SearchPageComponent {
     }, 1000);
   }
 
+  // tout revoir
   addToPlaylist(video: any) {
     const session = localStorage.getItem('session');
     if (!session) return;

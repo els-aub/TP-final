@@ -1,5 +1,9 @@
 <header class="flex justify-between items-center bg-pink-500 text-white p-4">
-    <div class="text-xl font-bold">YouTube Clone</div>
+    <div class="flex items-center gap-2 text-xl font-bold">
+        <img src="./assets/logo.jpg" alt="Logo" class="h-8 w-8 rounded" />
+        <span>Youtube Clone</span>
+    </div>
+
     <div class="space-x-2">
         <ng-container *ngIf="!isLogged(); else loggedOut">
             <a routerLink="/auth/register" class="hover:underline text-sm inline-flex items-center gap-1">
